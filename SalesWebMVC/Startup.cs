@@ -43,6 +43,7 @@ namespace SalesWebMVC
 
             services.AddScoped<SeedingService>(); //isso registra nosso serviço no sistema de injeção da aplicação
             services.AddScoped<SellerService>();
+            services.AddScoped<DonationService>();
         }
 
         

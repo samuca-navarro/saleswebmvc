@@ -7,24 +7,19 @@ using System.Threading.Tasks;
 
 namespace SalesWebMVC.Services
 {
-    public class SellerService
+    public class DonationService
     {
         private readonly SalesWebMVCContext _context;
-
-        public SellerService(SalesWebMVCContext context)
+        
+        public DonationService(SalesWebMVCContext context)
         {
             _context = context;
         }
 
-        public List<Seller> FindAll()
+        public List<Donation> FindAll()
         {
-            return _context.Seller.ToList();
+            return _context.Donation.ToList();
         }
 
-        public void Insert(Seller obj)
-        {
-            _context.Add(obj);
-            _context.SaveChanges();
-        }
     }
 }

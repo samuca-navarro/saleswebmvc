@@ -18,9 +18,9 @@ namespace SalesWebMVC.Data
 
         public void Seed()
         {
-            if (_context.Department.Any() || _context.Seller.Any() || _context.SalesRecord.Any())  //testa se tem registro no banco de dados
+            if (_context.Department.Any() || _context.Seller.Any() || _context.SalesRecord.Any() || _context.Donation.Any())  //testa se tem registro no banco de dados
             {
-                return; //banco de ados foi populado
+                return; //banco de dados foi populado
             }
 
             Department d1 = new Department(1, "Computers");
@@ -66,6 +66,10 @@ namespace SalesWebMVC.Data
             SalesRecord r29 = new SalesRecord(29, new DateTime(2018, 10, 23), 12000.0, SaleStatus.Billed, s5);
             SalesRecord r30 = new SalesRecord(30, new DateTime(2018, 10, 12), 5000.0, SaleStatus.Billed, s2);
 
+            Donation don1 = new Donation(1, "Zé", 1000.0);
+            Donation don2 = new Donation(2, "Ivonete", 5000.0);
+            Donation don3 = new Donation(3, "Marinete", 3000.0);
+
             _context.Department.AddRange(d1, d2, d3, d4);
             
             _context.Seller.AddRange(s1, s2, s3, s4, s5, s6);
@@ -75,6 +79,8 @@ namespace SalesWebMVC.Data
                 r11, r12, r13, r14, r15, r16, r17, r18, r19, r20,
                 r21, r22, r23, r24, r25, r26, r27, r28, r29, r30
             );
+
+            _context.Donation.AddRange(don1, don2, don3);
 
             _context.SaveChanges();
 
