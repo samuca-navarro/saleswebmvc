@@ -21,5 +21,11 @@ namespace SalesWebMVC.Services
             return _context.Donation.ToList();
         }
 
+        public void Insert(Donation obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
+
     }
 }
